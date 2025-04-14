@@ -1,0 +1,126 @@
+
+body {
+	font-family: Arial, sans-serief; background-color:  #E5E5E5; text-align: center;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.425), rgba(241, 225, 171, 0.274)), 
+    url('img/calzado.jpg');
+}
+main {
+	max-width: 900px; width: 100%; margin: auto; padding: 10px;
+}
+.pagina {
+    width:700px; text-align: center; margin: auto;border:2px solid gray;
+    background-color: #9c9999c0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.formulario {
+	display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: auto; padding: 10px; 
+	border: 1px solid gray;
+}
+.formulario_label {
+	display: block; font-weight: 700; padding: 10px; cursor: pointer;
+}
+.formulario_grupo-input {
+	position: relative;
+}
+.formulario_input {
+	width: 100%; background: #fff; border: 3px solid transparent; border-radius: 3px; height: 45px;
+	line-height: 45px; padding: 0 40px 0 10px; transition: .3s ease all;
+}
+.formulario_input:focus {
+	border: 3px solid #0075FF; outline: none; box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+}
+.formulario_input-error {
+	font-size: 12px; margin-bottom: 0; display: none;
+}
+.formulario_input-error-activo {
+	display: block;
+}
+.formulario_validacion-estado {
+	position: absolute; right: 10px; bottom: 15px; z-index: 100; font-size: 16px; opacity: 0;
+}
+.formulario_checkbox {
+	margin-right: 10px;
+}
+.formulario_grupo-terminos, 
+.formulario_mensaje,
+.formulario_grupo-btn-enviar {
+	grid-column: span 2;
+}
+.formulario_mensaje {
+	height: 45px; line-height: 45px; background: #F66060; padding: 0 15px; border-radius: 3px; display: none;
+}
+.formulario_mensaje-activo {
+	display: block;
+}
+.formulario_mensaje p {
+	margin: 0;
+}
+.formulario_grupo-btn-enviar {
+	 flex-direction: column; align-items: center;
+}
+button[type="submit"] {
+	font-weight: bold; border: none; border-radius: 5px; cursor: pointer; transition: .1s ease all;
+	background-color: #4CAF50; color: white;padding: 10px 20px;
+}
+button[type="reset"] {
+	font-weight: bold; border: none; border-radius: 5px; cursor: pointer; transition: .1s ease all;
+    background-color: #df1818d2; color: white; padding: 10px 20px;
+}
+.formulario_btn:hover {
+	box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+.formulario_mensaje-exito {
+	font-size: 14px; color: #119200; display: none;
+}
+.formulario_mensaje-exito-activo {
+	display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario_grupo-correcto .formulario_validacion-estado {
+	color: #1ed12d; opacity: 1;
+}
+
+.formulario_grupo-incorrecto .formulario_label {
+	color: #bb2929;
+}
+
+.formulario_grupo-incorrecto .formulario_validacion-estado {
+	color: #bb2929; opacity: 1;
+}
+
+.formulario_grupo-incorrecto .formulario_input {
+	border: 3px solid #bb2929;
+}
+.hamburguer{
+    position: fixed; top: 30px; right: 30px; background: white; width: 40px; height: 40px; cursor: pointer;
+    border-radius: 10px; box-shadow: 0 0 6px black;
+}
+.menu{
+    position: fixed; top: 0; right: 0; width: 20vw; height: 30%;
+    background-image: linear-gradient(135deg, black 0%, rgba(4, 0, 255, 0.349) 100%);
+    display: flex; flex-direction: column;
+    justify-content: space-evenly; align-items: center;
+    box-shadow: 0 0 6px rgb(0, 0, 0); transition: transform .3s ease-in-out; transform: translate(110%);
+}
+.spread{
+    transform: translate(0);
+}
+.menu a{
+    color: white; text-decoration: none;
+}
+
+/* ----- -----  Mediaqueries ----- ----- */
+@media screen and (max-width: 800px) {
+	.formulario {
+		grid-template-columns: 1fr;
+	}
+	.formulario_grupo-terminos, 
+	.formulario_mensaje,
+	.formulario_grupo-btn-enviar {
+		grid-column: 1;
+	}
+	.formulario_btn {
+		width: 100%;
+	}
+}

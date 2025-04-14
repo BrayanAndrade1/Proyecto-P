@@ -1,0 +1,148 @@
+<?php
+    include("conexion.php");
+    $con = connection();
+    $sql = "SELECT * FROM usuarios_datos";
+    $query = mysqli_query($con, $sql);
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/EstiloMenu.css">
+    <link rel="stylesheet" type="text/css" href="css/EstiloMenu1.css">
+    <title>CALZADO DEPORTIVO</title>
+</head>
+<body>
+    <div id="wrap"> <!--Caja contenedora-->
+        <h2>MatPam</h2>
+        <p>Calzado de todo tipo</p>
+        <ul id="navlist">
+            <li id="active"><a href="#" id="current">Página de Inicio</a> <!--Item principal de menú-->
+            </li>
+            <li><a href="#">Productos</a> <!--Item principal de menú-->
+                <ul> <!--Lista que define subitems de menú que se mostrarán sólo al posicionar el ratón sobre el item principal-->
+                    <li><a href="#">Categorías</a></li> <!--SubItem de menú-->
+                    <li><a href="#">Edad</a></li>
+                    <li><a href="#">Género</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Carrito</a></li><!--Item principal de menú-->
+            <li><a href="#">Iniciar Sesión/ Registrarse</a> <!--Item principal de menú-->
+                <ul> <!--Lista que define subitems de menú que se mostrarán sólo al posicionar el ratón sobre el item principal-->
+                    <li><a href="IniciarSesion.php">Iniciar Sesión</a></li> <!--SubItem de menú-->
+                    <li><a href="CrearCuenta.php">Registrarse</a></li> <!--SubItem de menú-->
+                </ul>         
+            </li>
+            <li><a href="Geolocalización.html">Ubicación</a></li><!--Item principal de menú-->   
+            <div class="limpiador"></div> <!--Explicado en apartados anteriores del curso-->
+        </ul>
+    </div>
+    <section class="contenido">
+        <div class="mostrador" id="mostrador">
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/1.png" alt="">
+                    </div>
+                    <p class="descripcion">NIKE AIR 97</p>
+                    <span class="precio">$ 1.300</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/2.png" alt="">
+                    </div>
+                    <p class="descripcion" id>NIKE RUNNING TERRA </p>
+                    <span class="precio">$ 1.800</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/3.png" alt="">
+                    </div>
+                    <p class="descripcion">NIKE WINFLO 8
+                    </p>
+                    <span class="precio">$ 3.600</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/4.png" alt="">
+                    </div>
+                    <p class="descripcion">NIKE LOW-TOP</p>
+                    <span class="precio">$ 1.800</span>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/5.png" alt="">
+                    </div>
+                    <p class="descripcion">NIKE BLAZER 97</p>
+                    <span class="precio">$ 130</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/6.png" alt="">
+                    </div>
+                    <p class="descripcion">NIKE LEGEND ESENTIAL</p>
+                    <span class="precio">$ 2.000</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/7.png" alt="">
+                    </div>
+                    <p class="descripcion">NIKE AIR ZOOM</p>
+                    <span class="precio">$ 2.500</span>
+                </div>
+                <div class="item" onclick="cargar(this)">
+                    <div class="contenedor-foto">
+                        <img src="img/8.png" alt="">
+                    </div>
+                    <p class="descripcion">NIKE TERRA KING</p>
+                    <span class="precio">$ 1.800</span>
+                </div>
+            </div> 
+        </div>
+        <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
+        <div class="seleccion" id="seleccion">
+            <div class="cerrar" onclick="cerrar()">&#x2715</div>
+            <div class="info">
+                <img src="img/1.png" alt="" id="img">
+                <h2 id="modelo">NIKE MODEL 1</h2>
+                <p id="descripcion">Descripción Modelo 1</p>
+
+                <span class="precio" id="precio">$ 130</span>
+
+                <div class="fila">
+                    <div class="size">
+                        <h3>Talla:</h3>
+                        <select name="" id="">
+                            <option value="">40</option>
+                            <option value="">42</option>
+                            <option value="">44</option>
+                            <option value="">46</option>
+                        </select>
+                    </div>
+                    <button>AGREGAR AL CARRITO</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Topbar Search -->
+    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+        <div class="input-group">
+            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                aria-label="Search" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                    <i class="fas fa-search fa-sm"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+    <footer style="float: left; width: 300px;">
+        <p class="pie">&copy; 2022 - Página Principal</p>
+    </footer>
+    <script src="js/diseñoproductos.js"></script>
+</body>
+</html>

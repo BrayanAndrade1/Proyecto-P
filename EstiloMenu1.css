@@ -1,0 +1,56 @@
+body {
+   font: 62.5%/1.2 Arial, Helvetica, sans-serif; background-color: silver;
+}
+h2 {
+   margin:10px; color: #000000; font-size : 50px; text-align: center;
+}
+
+label {
+   margin:10px; color: black; font-size : 10px; text-align: left;
+}
+
+/*Caja contenedora*/   
+#wrap { 
+   font-size: 10px; width: 100%; padding: 2px; margin: 0 auto;
+   text-align: left solid rgb(0, 0, 0); background-color: black; 
+   box-shadow: 0px 0px 10px black;
+}
+.pie {
+   color: black; width:100%; text-align: center; margin: 1px;
+}
+/*Listas de subitems de menú*/   
+#navlist li ul {
+   display: none; background-color: gray;
+}     
+.limpiador{
+   padding:0; border-style:none; clear:both; 
+} 
+#navlist { 
+   padding: 1px 0px; border-bottom: 3px solid gray; font: bold 20px Arial, Helvetica, sans-serif; 
+}
+#navlist li { 
+   list-style: none; display: inline; margin-left:20px; float: left; margin: 10px;
+}
+#navlist li a { 
+   padding: 3px; border: 1px solid gray; border-bottom: none; background: gray; text-decoration: none; 
+   display: block; padding: 3px 8px; background-color: rgb(0, 0, 0); color: #ffffff;
+}
+#navlist li a:link { 
+   color: rgb(255, 255, 255); 
+}
+#navlist li a:hover {
+   color: #ffffff; background: gray; border-color: gray; 
+}  
+#navlist li:hover ul {
+   font-size: 20px; display: block; position: absolute; margin: 0; padding: 0;
+}
+#navlist li:hover li { 
+   float: none; 
+}
+#navlist li:hover li a { 
+   background-color: gray; border-bottom: 1px solid #fff; color: #000; 
+} 
+#navlist li li a:hover { 
+   background-color: silver; 
+}
+
